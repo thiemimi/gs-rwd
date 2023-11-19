@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect } from "react"
 
 export default function Login() {
@@ -50,7 +51,7 @@ export default function Login() {
                 }
 
                 if(user){
-                    setMsgstatus("Login realizado com SUCESSO!")
+                    setMsgstatus("Login realizado com sucesso!")
 
                     const token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2);
                     
@@ -91,26 +92,27 @@ export default function Login() {
     }
     return(
         <div className="LOGIN">
-            <h2 className="classStatus">{msgstatus}</h2>
-            <div>
-                <form onSubmit={handleSubmit}>
-                    <fieldset>
-                        <legend>Dados de Acesso: </legend>
-
-                        <div>
-                            <label htmlFor="idEmail">Email: </label>
-                            <input type="email" name="email" id="idEmail" placeholder="Digite o seu email." value={usuario.email} onChange={handleChange}/>
+            <div className="LoginContent">
+                <Image src={'/logo.png'} alt='logo' width={150} height={150}/>
+                <h3>Faça seu Login</h3>
+                <p>Explore o caminho para a saúde e bem-estar</p>
+            </div>
+            <div className="Formulario">
+                <form onSubmit={handleSubmit}>   
+                    <div className="Login-inputs">
+                        <div className="Login-input">
+                            <input type="email" name="email" id="idEmail" placeholder="Digite o seu email" value={usuario.email} onChange={handleChange}/>
                         </div>
 
-                        <div>
-                            <label htmlFor="idSenha">Senha: </label>
-                            <input type="password" name="senha" id="idSenha" placeholder="Digite a sua senha." value={usuario.senha} onChange={handleChange}/>
+                        <div className="Login-input">
+                            <input type="password" name="senha" id="idSenha" placeholder="Digite a sua senha" value={usuario.senha} onChange={handleChange}/>
                         </div>
+                    </div>    
+                    <p className="classStatus">{msgstatus}</p>
+                    <div className="Botao">
+                        <button>LOGIN</button>
+                    </div>
 
-                        <div>
-                            <button>LOGIN</button>
-                        </div>
-                    </fieldset>
                 </form>
             </div>
         </div>
