@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react"
+import Link from "next/link";
 
 export default function Login() {
     
@@ -112,7 +113,10 @@ export default function Login() {
                     <div className="Botao">
                         <button>LOGIN</button>
                     </div>
-
+                    <div className="Cadastre-se">
+                        <p>Ainda não possui uma conta?</p>
+                        <Link href={'/cadastrar'}>Cadastre-se</Link>
+                    </div>
                 </form>
             </div>
         </div>

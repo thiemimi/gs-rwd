@@ -44,7 +44,22 @@
     }
   }
 }
+// ================================= RODAPÉ =========================================== //
 
+.RODAPE{
+  display:flex;
+  height: 15vh;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #bdd6d2;
+
+  .Integrantes{
+    font-size: 14px;
+    padding: 1.2rem;
+    color: #586875;
+  }
+}
 // ================================= LOGIN =========================================== //
 
 .LOGIN {
@@ -109,6 +124,12 @@
         padding: 0.7rem 5.2rem;
         cursor: pointer;
       }
+    }
+
+    .Cadastre-se{
+      display:flex;
+      justify-content: center;
+      padding: 1.2rem;
     }
   }
 }
