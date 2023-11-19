@@ -50,14 +50,18 @@
   display:flex;
   height: 15vh;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 2rem;
   background-color: #bdd6d2;
 
-  .Integrantes{
-    font-size: 14px;
-    padding: 1.2rem;
+  .Turma{
+    font-size: 24px;
     color: #586875;
+  }
+  .Integrantes{
+    font-size: 13px;
+    color: #586875;
+    padding: 1.2rem;
   }
 }
 // ================================= LOGIN =========================================== //
@@ -83,7 +87,7 @@
     font-size: 20px;
   }
 
-  .Formulario{
+  .FormLogin{
     display:flex;
     align-items: center;
     height: auto;
@@ -128,8 +132,90 @@
 
     .Cadastre-se{
       display:flex;
-      justify-content: center;
       padding: 1.2rem;
+
+      p{
+        margin-right: 6px;
+      }
+    }
+  }
+}
+
+// ================================= CADASTRAR =========================================== //
+
+.CADASTRAR{
+  display:flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #e3e5d7;
+
+  .CadastrarContent{
+    text-align: center;
+    line-height: 35px;
+    font-size: 20px;
+  }
+
+  .FormCadastrar{
+    display:flex;
+    align-items: center;
+    height: auto;
+    flex-direction: column;
+    padding: 1.6rem;
+
+    .cadastrar-inputs{
+    
+      .cadastrar-input{
+        display:flex;
+        flex-direction: column;
+        color:#586875;
+
+        & input{
+          text-align: center;
+          margin: 0.6rem 0;
+          padding: 0.8rem 5.2rem;
+          border: 1px solid #586875;
+          border-radius: 15px;
+        }
+        
+      }
+    }
+  }
+  .Botoes{
+    display:flex;
+    padding: 0.4rem;
+    
+    .botao-Cancelar{
+      background-color: #a93545;
+      color: rgb(255, 255, 255);
+      border:none;
+      border-radius: 10px;
+      text-decoration: none;
+      margin-top: 0.5rem;
+      margin-right: 1rem;
+      padding: 0.7rem 1.2rem;
+      cursor: pointer;
+    }
+    .botao-Cadastrar{
+      background-color: #586875;
+      color: rgb(255, 255, 255);
+      font-size: 16px;
+      border:none;
+      border-radius: 10px;
+      text-decoration: none;
+      margin-top: 0.5rem;
+      padding: 0.7rem 1.2rem;
+      cursor: pointer;
+    }
+  }
+  .Logar{
+    display: flex;
+    padding: 1.2rem;
+
+    p{
+      margin-right: 6px;
     }
   }
 }

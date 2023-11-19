@@ -43,9 +43,6 @@ export default function Cabecalho(){
             <header className="Cabecalho">
                 
                 <nav>
-                    {/* <div className="Logo">
-                        <Image src={'/logo.png'} alt='logo' width={70} height={65}/>
-                    </div> */}
                     <div className="Menu">
                         <Link href={'/'} className={rotaAtual.pathname == "/" ? "active" : ""}>Home</Link>
                         <Link href={'/sobrenos'} className={rotaAtual.pathname == "/sobrenos" ? "active" : ""}> Sobre Nos</Link>

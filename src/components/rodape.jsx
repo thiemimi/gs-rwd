@@ -4,6 +4,9 @@ export default function Rodape(){
 
     return(
         <main className="RODAPE">
+            <div className="Turma">
+                <h2>Turma: TDSPK</h2>
+            </div>
             <Image src={'/logo.png'} alt='logo' width={120} height={120}/>
             <div className="Integrantes">
                 <p>Ana Clara Rocha de Olivera RM: 550110</p>
