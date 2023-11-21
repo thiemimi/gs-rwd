@@ -219,3 +219,155 @@
     }
   }
 }
+
+// ================================= SOBRENOS =========================================== //
+.SOBRENOS{
+  display:flex;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  padding: 2.3rem;
+  background-color: #e3e5d7;
+  flex-direction: column;
+
+  .ContainerSobreNos{
+    display:flex;
+    padding: 3.2rem;
+    flex-direction: row;
+    width: 70%;
+    
+    .TituloSobrenos{
+      display:flex;
+      flex-direction: column;
+      line-height: 35px;
+      text-align: justify;
+      padding: 1.2rem;
+
+      h1{
+        font-size: 80px;
+        color:#586875;
+        line-height: 80px;
+      }
+  
+      h2{
+        font-size: 40px;
+        color:#1693a5;
+        line-height: 40px;
+      }
+    }
+    p{
+      line-height: 24px;
+      font-size: 20px;
+      color:#586875;
+      text-align: justify;
+      padding: 1.2rem;
+    }
+  }
+  .Componentes{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 30px;
+    width: 70%;
+
+    h1{
+      color:#586875;
+      font-size: 36px;
+      padding: 1.5rem;
+      background-color: #bdd6d2;
+      border-radius: 20px;
+    }
+
+    .Componente{
+      display:flex;
+      flex-direction: column;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      text-align: justify;
+      
+      h2{
+        font-size: 30px;
+        color:#479093
+      }
+      p{
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+// ================================= HOME =========================================== //
+.HOME{
+  display:flex;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  background-color: #e3e5d7;
+
+  .BannerHome{
+    display:flex;
+    width: 100%;
+    height: 65vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 2.4rem;
+    margin: 0 auto;
+    background-color: #f6eddc;
+
+    h1{
+      font-size: 36px;
+      color:#479093
+    }
+    p{
+      font-size: 24px;
+      padding: 1.5rem;
+      width: 80%;
+    }
+    .BotoesHome{
+      display:flex;
+      margin-top: 1.4rem;
+
+      .BotaoHome{
+        text-decoration: none;
+        background-color: #479093;
+        padding: 1rem;
+        color: white;
+        border-radius: 10px;
+        margin-right: 20px;
+      }
+    }
+  }
+  .BeneficiosHome{
+    display:flex;
+    width: 100%;
+    height: 60vh;
+    justify-content: center;
+    align-items: center;
+    padding: 2.4rem;
+    
+
+    .BeneficioHome{
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.2rem;
+      margin-right: 2.8rem;
+      margin: 1rem;
+      text-align: center;
+      
+      h1{
+        font-size: 28px;
+        color:#1693a5;
+        line-height: 45px;
+      }
+      p{
+        font-size: 20px;
+        line-height: 25px;
+      }
+    }
+  }
+}
