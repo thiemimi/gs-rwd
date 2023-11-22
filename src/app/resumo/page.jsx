@@ -92,15 +92,11 @@ export default function Resumo(){
     return(
         <main className="RESUMO">
             <div className="BlocosResumo">
-                <div className="BlocoResumo">
-                    <h1>Resumo das atividades cadastradas: </h1>
-                </div>
 
                 <div className="BlocoResumo">
                     <h1>Metas: </h1>
-                    <div className="NovaMeta">
+                    <div className="Nova">
                         <form action="#" method="get" onSubmit={handleSubmit}>
-                            <label htmlFor="meta">Meta</label>
                             <input type="text" name="meta" id="meta" placeholder="Digite sua meta" value={metaInput} onChange={(e) => setMetaInput(e.target.value)} />
                             <button id="botaoMeta" type="submit">Adicionar</button>
                         </form>
@@ -108,18 +104,14 @@ export default function Resumo(){
 
                     <div className="Tabela">
                         <table border="1" id="tabelameta">
-                            <thead>
-                                <tr>
-                                    <th>Meta</th>
-                                </tr>
-                            </thead>
+                          
                             <tbody id="meta">
                                 {listaMetas.map((meta, index) => (
                                     <tr key={index}>
                                         <td>{meta.meta}</td>
                                         <td>
                                             <button onClick={() => deletarMeta(index)}>
-                                                Deletar
+                                                X
                                             </button>
                                         </td>
                                     </tr>
@@ -130,10 +122,11 @@ export default function Resumo(){
                 </div>
 
                 <div className="BlocoResumo">
+
                     <h1>Lembretes: </h1>
-                    <div className="NovoLembrete">
+                    <div className="Nova">
                         <form action="#" method="get" onSubmit={handleSubmitt}>
-                            <label htmlFor="lembrete">Lembrete</label>
+
                             <input type="text" name="lembrete" id="lembrete" placeholder="Digite seu lembrete" value={lembreteInput} onChange={(e) => setLembreteInput(e.target.value)} />
                             <button id="botaoLembrete" type="submit">Adicionar</button>
                         </form>
@@ -141,18 +134,14 @@ export default function Resumo(){
 
                     <div className="Tabela">
                         <table border="1" id="tabelalembrete">
-                            <thead>
-                                <tr>
-                                    <th>Lembrete</th>
-                                </tr>
-                            </thead>
+
                             <tbody id="lembrete">
                                 {listaLembretes.map((lembrete, index) => (
                                     <tr key={index}>
                                         <td>{lembrete.lembrete}</td>
                                         <td>
                                             <button onClick={() => deletarLembrete(index)}>
-                                                Deletar
+                                                X
                                             </button>
                                         </td>
                                     </tr>
@@ -161,6 +150,13 @@ export default function Resumo(){
                         </table>
                     </div>
                 </div>
+
+
+                <div className="BlocoResumo">
+                    <h1>Resumo das atividades cadastradas: </h1>
+                </div>
+
+
             </div>
         </main>
     )

@@ -21,14 +21,14 @@ export default function Home() {
         </div>
         <div className='BeneficiosHome'>
           <div className='BeneficioHome'>
-            <Image src={'/coracao.png'} alt='coracao' width={60} height={50}/>
+            <Image src={'/coracao.png'} alt='coracao' width={65} height={55}/>
             <h1>Vantagens</h1>
             <p>Abordagem proativa à saúde.</p>
             <p>Comunidade global focada na promoção da saúde.</p>
             <p>Experiência envolvente e personalizada.</p>
           </div>
           <div className='BeneficioHome'>
-            <Image src={'/celular.png'} alt='celular' width={60} height={70}/>
+            <Image src={'/celular.png'} alt='celular' width={55} height={75}/>
             <h1>Integração Móvel</h1>
             <p>Notificações push para lembretes.</p>
             <p>Calendário integrado para eventos de saúde.</p>
