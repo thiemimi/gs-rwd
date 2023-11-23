@@ -14,6 +14,8 @@ export default function Explorar() {
             
             <Link href="/exames">Exames</Link>
 
+            <Link href="/metas">Metas Pessoais</Link>
+
             <Link href="/nutricao">Nutrição</Link>
 
             <Link href="/sono">Sono</Link>

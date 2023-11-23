@@ -1052,7 +1052,124 @@
     }
   }
 }
+// ================================= METAS =========================================== //
+.METAS{
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 90vh;
+  padding: 4.2rem;
+  background-color: #e3e5d7;
 
+  .BotaoVoltar{
+    background-color:#5589ad;
+    width: 10vh;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    text-align: center;
+    padding: 0.5rem;
+    font-weight: bold;
+    color:white;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    
+  }
+
+  h1{
+    font-size: 54px;
+    margin-bottom: 1.6rem;
+    color: #586875;
+    text-transform: uppercase;
+    
+  }
+
+  .FormMetas{
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    padding: 1.4rem;
+    width: 100%; 
+    min-height: 20vh;
+    border-radius: 10px;
+
+    label{
+      display:flex;
+      flex-direction: column;
+      color: #1693a5;
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
+    input, select{
+      padding: 0.3rem;
+      min-width: 100%;
+      border-radius: 10px;
+    }
+
+    button{
+      background-color:#5589ad;
+      width: 20vh;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      padding: 0.5rem;
+      font-weight: bold;
+      color:white;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+  }
+
+  .MetasRegistradas{
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 1.4rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    .MetaRegistrada{
+      background-color: #f2f2f2;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    
+    button{
+      background-color: #e74c3c;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+    }
+  }
+
+  .SobreMetas{
+    background-color: #f1efef;
+    padding: 1.2rem;
+    border-radius: 10px;
+    width: 100%;
+
+    h2{
+      font-size: 42px;
+      
+    }
+
+    p{
+      font-size: 18px;
+      text-align: justify;
+    }
+
+  }
+}
 // ================================= MEDIA =========================================== //
 @media screen and (max-width:1024px){
   .Cabecalho{
