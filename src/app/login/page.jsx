@@ -98,7 +98,7 @@ export default function Login() {
                 <h3>Faça seu Login</h3>
                 <p>Explore o caminho para a saúde e bem-estar</p>
             </div>
-            <div className="Formulario">
+            <div className="FormLogin">
                 <form onSubmit={handleSubmit}>   
                     <div className="Login-inputs">
                         <div className="Login-input">

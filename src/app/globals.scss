@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Mulish', sans-serif;  
 }
 
 
-// ================================= CABEÇALHO =========================================== //
+// =========================================== CABEÇALHO =========================================== //
 
 .Cabecalho{
   display:flex;
@@ -31,36 +34,46 @@
     }
 
     a{
+      
       color: white;
       text-decoration: none;
       font-size: 18px;
       text-transform: uppercase;
       border-radius: 10px;
       padding: 0.8rem;
+      
+    }
+    
+    a:active, a:hover{
+      background-color: #a5c8ca;
+      
     }
 
-    a:hover{
-      background-color: #a5c8ca;
-    }
+
   }
 }
-// ================================= RODAPÉ =========================================== //
+// =========================================== RODAPÉ =========================================== //
 
 .RODAPE{
   display:flex;
-  height: 15vh;
+  height: 20vh;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 2rem;
   background-color: #bdd6d2;
 
-  .Integrantes{
-    font-size: 14px;
-    padding: 1.2rem;
+  .Turma{
+    font-size: 24px;
     color: #586875;
   }
+  .Integrantes{
+    font-size: 16px;
+    font-weight:bold;
+    color: #586875;
+    padding: 1.2rem;
+  }
 }
-// ================================= LOGIN =========================================== //
+// =========================================== LOGIN =========================================== //
 
 .LOGIN {
   display:flex;
@@ -83,7 +96,7 @@
     font-size: 20px;
   }
 
-  .Formulario{
+  .FormLogin{
     display:flex;
     align-items: center;
     height: auto;
@@ -128,8 +141,598 @@
 
     .Cadastre-se{
       display:flex;
-      justify-content: center;
+      padding: 1.2rem;
+
+      p{
+        margin-right: 6px;
+      }
+    }
+  }
+}
+
+// =========================================== CADASTRAR =========================================== //
+
+.CADASTRAR{
+  display:flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #e3e5d7;
+
+  .CadastrarContent{
+    text-align: center;
+    line-height: 35px;
+    font-size: 20px;
+  }
+
+  .FormCadastrar{
+    display:flex;
+    align-items: center;
+    height: auto;
+    flex-direction: column;
+    padding: 1.6rem;
+
+    .cadastrar-inputs{
+    
+      .cadastrar-input{
+        display:flex;
+        flex-direction: column;
+        color:#586875;
+
+        & input{
+          text-align: center;
+          margin: 0.6rem 0;
+          padding: 0.8rem 5.2rem;
+          border: 1px solid #586875;
+          border-radius: 15px;
+        }
+        
+      }
+    }
+  }
+  .Botoes{
+    display:flex;
+    padding: 0.4rem;
+    
+    .botao-Cancelar{
+      background-color: #a93545;
+      color: rgb(255, 255, 255);
+      border:none;
+      border-radius: 10px;
+      text-decoration: none;
+      margin-top: 0.5rem;
+      margin-right: 1rem;
+      padding: 0.7rem 1.2rem;
+      cursor: pointer;
+    }
+    .botao-Cadastrar{
+      background-color: #586875;
+      color: rgb(255, 255, 255);
+      font-size: 16px;
+      border:none;
+      border-radius: 10px;
+      text-decoration: none;
+      margin-top: 0.5rem;
+      padding: 0.7rem 1.2rem;
+      cursor: pointer;
+    }
+  }
+  .Logar{
+    display: flex;
+    padding: 1.2rem;
+
+    p{
+      margin-right: 6px;
+    }
+  }
+}
+
+// =========================================== SOBRENOS =========================================== //
+.SOBRENOS{
+  display:flex;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  padding: 2.3rem;
+  background-color: #e3e5d7;
+  flex-direction: column;
+
+  .ContainerSobreNos{
+    display:flex;
+    padding: 3.2rem;
+    flex-direction: row;
+    width: 100%;
+    background-color: #f6eddc;
+    
+    .TituloSobrenos{
+      display:flex;
+      flex-direction: column;
+      line-height: 35px;
+      text-align: justify;
+      padding: 1.2rem;
+
+      h1{
+        font-size: 80px;
+        color:#586875;
+        line-height: 80px;
+      }
+  
+      h2{
+        font-size: 40px;
+        color:#1693a5;
+        line-height: 40px;
+      }
+    }
+    p{
+      line-height: 24px;
+      font-size: 20px;
+      color:#586875;
+      text-align: justify;
       padding: 1.2rem;
     }
   }
+  .Componentes{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 30px;
+    width: 70%;
+
+  
+
+    .Componente{
+      display:flex;
+      padding: 0.8rem;
+      margin: 0.6rem 0;
+      text-align: justify;
+      align-items: center;
+      justify-content: center;
+      
+      h2{
+        font-size: 35px;
+        color:#479093;
+        line-height: 40px;
+      }
+      p{
+        font-size: 24px;
+    
+      }
+
+      .TextoImagemSobreNos{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+
+        .ImagemSobreNos{
+          margin-bottom: 12px;
+        }
+
+      }
+    }
+  }
+}
+// =================================== HOME =========================================== //
+.HOME{
+  display:flex;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  background-color: #e3e5d7;
+
+  .BannerHome{
+    display:flex;
+    width: 100%;
+    height: 65vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 2.4rem;
+    margin: 0 auto;
+    background-color: #f6eddc;
+
+    h1{
+      font-size: 36px;
+      color:#479093;
+      text-shadow: 0.04em  0.04em rgb(97, 97, 124);
+    }
+    p{
+      font-size: 24px;
+      padding: 1.5rem;
+      width: 80%;
+    }
+    .BotoesHome{
+      display:flex;
+      margin-top: 1.4rem;
+
+      .BotaoHome{
+        width: 16rem;
+        text-decoration: none;
+        background-color: #479093;
+        padding: 1rem;
+        color: white;
+        border-radius: 10px;
+        margin-right: 20px;
+      }
+    }
+  }
+  .BeneficiosHome{
+    display:flex;
+    width: 100%;
+    height: 60vh;
+    justify-content: center;
+    align-items: center;
+    padding: 2.4rem;
+    
+
+    .BeneficioHome{
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.2rem;
+      margin-right: 2.8rem;
+      margin: 1rem;
+      text-align: center;
+      
+      h1{
+        font-size: 28px;
+        color:#1693a5;
+        line-height: 45px;
+        text-shadow: 0.06em  0.04em rgb(97, 97, 124);
+      }
+      p{
+        font-size: 20px;
+        line-height: 25px;
+      }
+    }
+  }
+}
+
+// ================================= RESUMO =========================================== //
+.RESUMO{
+  display:flex;
+  width: 100%;
+  min-height: 90vh;
+  background-color: #f6eddc;
+  
+  .BlocosResumo{
+    display:grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-gap: 40px;
+    width: 100%;
+    padding: 3.3rem;
+
+    .BlocoResumo{
+      width: 100%;
+      border: 2px solid #586875;
+      border-radius: 5px;
+      background-color: #e3e5d7;
+      padding: 1.4rem;
+
+      h1{
+        text-align: justify;
+        padding: 0.5rem;
+        font-size: 28px;
+        color: #586875;
+      }
+
+      .Nova{
+        display:flex;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: center;
+
+        input{
+          width: 100%;
+          margin-bottom: 1rem;
+          margin-left: 0.5rem;
+          font-size: 16px;
+          border: 1px solid #586875;
+          border-radius: 5px;
+          padding: 0.6rem;
+        }
+
+        button{
+          display:flex;
+          float:right;
+          background-color: #479093;
+          padding: 0.6rem;
+          border:none;
+          border-radius: 5px;
+          color: white;
+          font-weight: bold;
+          cursor:pointer;
+          margin-left: 5px;
+        }
+      }
+
+      .Tabela{
+        display:flex;
+        width: 100%;
+        padding: 1.4rem;
+        margin-top: 0.2rem;
+        border-radius: 6px;
+
+        
+        table{
+          width: 100%;
+          border-spacing: collapse;
+          text-align: center;
+          background-color: white;
+
+          td {
+            border: none;
+            padding: 0.2rem;
+            text-align: center;
+            font-size: 24px;
+          
+          }
+
+          button{
+            background-color: rgb(207, 99, 87);
+            padding: 0.6rem;
+            border:none;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            cursor:pointer;
+          
+          }
+
+        }
+
+
+      
+      }
+      
+    }
+  }
+}
+
+// ================================= PRODUTO =========================================== //
+.PRODUTO{
+  display:flex;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #e3e5d7;
+  
+
+  .BannerProduto{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    height: 55vh;
+    background-color: #f6eddc;
+    padding: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    h1{
+      font-size: 32px;
+      color:#479093;
+    }
+
+    p{
+      font-size: 22px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+// ================================= CONFIGURAÇÕES =========================================== //
+
+.CONFIGURACOES{
+  display:flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #e3e5d7;
+  
+  .TextoConfiguracoes{
+    padding: 2.4rem 2.4rem 0 2.4rem;
+    
+    h1{
+      font-size: 42px;
+      color:#586875;
+    }
+    p{
+      font-size: 24px;
+    }
+  }
+  
+  .Abas{
+    width: 100%;
+    padding: 2.3rem;
+    
+    .BotoesConfiguracoes{
+      display:flex;
+      border: 2px solid #1693a5;
+      border-radius: 5px 5px 0 0;
+      overflow: auto;
+      
+      button{
+        background-color: #e3e5d7;
+        width: 100%;
+        border: none;
+        outline: none;
+        padding: 1.3rem;
+        font-weight: bold;
+        color:#586875;
+        cursor: pointer;
+        float:left;
+        
+      }
+      button:hover{
+        background-color: #a5c8ca;
+      }
+      
+    }
+    
+    .Conteudo{
+      display:none;
+      width: 100%;
+      padding: 0.6rem;
+      
+      h1{
+        color:#1693a5;
+        font-size: 48px;
+      }
+
+      .DadosPerfil{
+        width: 100%;
+        padding: 2rem;
+        margin: 0.3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        p{
+          font-size: 24px;
+          padding: 0.5rem;
+        }
+        label{
+          width: 100%;
+          padding: 0.8rem 1.2rem;
+          border: 1px solid rgb(97, 97, 97);
+          border-radius: 10px;
+          box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.1); 
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 20px;
+          color:#5589ad;
+          
+        }
+      }
+      .Registros{
+        display:flex;
+        width: 100%;
+        height: 30vh;
+        padding: 1rem;
+        margin: 1rem;
+        border-radius: 10px;
+        background-color: #b4c2c6;
+      }
+    }
+  }
+
+  
+}
+
+// ================================= MEDIA =========================================== //
+@media screen and (max-width:1024px){
+  .Cabecalho{
+    nav{
+      padding: 0.3rem;
+      a{
+        font-size:12px;
+      }
+    }
+  }
+
+  .HOME{
+    display:flex;
+    min-height: 210vh;
+    .BannerHome{
+      display:flex;
+      min-height: 100vh;
+      p{
+        text-align: justify;
+      }
+    }
+
+    .BeneficiosHome{
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 120vh;
+      flex-direction: column;
+    }
+  }
+
+  .SOBRENOS{
+    .ContainerSobreNos{
+      display:flex;
+      flex-direction: column;
+
+      .TituloSobrenos{
+      h1{
+        font-size: 62px;
+        line-height: 65px;
+      } 
+    }
+  }
+    .Componentes{
+      display:flex;
+      .Componente{
+        display:flex;
+        flex-direction: column;
+
+        h2{
+          font-size: 28px;
+          text-align: center;
+
+        }
+
+        p{
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  .RESUMO{
+    .BlocosResumo{
+      display:flex;
+      flex-direction: column;
+    }
+  }
+}
+
+@media screen and (max-width:768px){
+  .Cabecalho{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 12vh;
+
+    .Logo{
+      display:none;
+    }
+
+    nav{
+      
+      a{
+        font-size:10px;
+      }
+    }
+
+  }
+
+  .RODAPE{
+    display:flex;
+    height: 30vh;
+
+    .ImagemRodape{
+      display:none;
+    }
+    p{
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+
 }
