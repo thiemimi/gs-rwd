@@ -282,8 +282,6 @@
     line-height: 30px;
     width: 70%;
 
-  
-
     .Componente{
       display:flex;
       padding: 0.8rem;
@@ -487,8 +485,6 @@
 
         }
 
-
-      
       }
       
     }
@@ -630,6 +626,46 @@
 
   
 }
+
+// ================================= EXPLORAR =========================================== //
+.EXPLORAR{
+  display:flex;
+  flex-direction: column;
+  background-color: #f6eddc;
+  min-height: 80vh;
+  width: 100%;
+  padding: 4rem;
+
+  .TituloExplorar{
+    padding: 1.2rem;
+    h1{
+      font-size: 58px;
+    }
+    h2{
+      font-size: 40px;
+    }
+  }
+
+  .LinksExplorar{
+    display:flex;
+    flex-direction: column;
+    padding: 2.3rem;
+
+    a{
+      color: white;
+      width: 25vh;
+      background-color: #1693a5;
+      text-decoration: none;
+      font-size: 18px;
+      text-transform: uppercase;
+      border-radius: 10px;
+      padding: 0.8rem;
+      margin-bottom: 1.4rem;
+      
+    }
+  }
+}
+
 
 // ================================= MEDIA =========================================== //
 @media screen and (max-width:1024px){
