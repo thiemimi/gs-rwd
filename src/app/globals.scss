@@ -400,9 +400,7 @@
   background-color: #f6eddc;
   
   .BlocosResumo{
-    display:grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-gap: 40px;
+    display: flex;
     width: 100%;
     padding: 3.3rem;
 
@@ -450,76 +448,40 @@
         }
       }
 
-      .Tabela{
-        display:flex;
-        width: 100%;
-        padding: 1.4rem;
-        margin-top: 0.2rem;
-        border-radius: 6px;
-
-        
-        table{
-          width: 100%;
-          border-spacing: collapse;
-          text-align: center;
-          background-color: white;
-
-          td {
-            border: none;
-            padding: 0.2rem;
-            text-align: center;
-            font-size: 24px;
-          
-          }
-
-          button{
-            background-color: rgb(207, 99, 87);
-            padding: 0.6rem;
-            border:none;
-            border-radius: 5px;
-            color: white;
-            font-weight: bold;
-            cursor:pointer;
-          
-          }
-
-        }
-
-      }
       
     }
   }
 }
 
 // ================================= PRODUTO =========================================== //
-.PRODUTO{
-  display:flex;
-  width: 100%;
-  min-height: 100vh;
-  background-color: #e3e5d7;
+// .PRODUTO{
+//   display:flex;
+//   width: 100%;
+//   min-height: 100vh;
+//   background-color: #e3e5d7;
   
 
-  .BannerProduto{
-    display:flex;
-    flex-direction: column;
-    width: 100%;
-    height: 55vh;
-    background-color: #f6eddc;
-    padding: 1.2rem;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+//   .BannerProduto{
+//     display:flex;
+//     flex-direction: column;
+//     width: 100%;
+//     height: 55vh;
+//     background-color: #f6eddc;
+//     padding: 1.2rem;
+//     justify-content: center;
+//     align-items: center;
+//     text-align: center;
 
-    h1{
-      font-size: 32px;
-      color:#479093;
-    }
+//     h1{
+//       font-size: 32px;
+//       color:#479093;
+//     }
 
-    p{
-      font-size: 22px;
-    }
-  }
-}
+//     p{
+//       font-size: 22px;
+//     }
+//   }
+// }
 
 
 
@@ -631,18 +593,20 @@
 .EXPLORAR{
   display:flex;
   flex-direction: column;
-  background-color: #f6eddc;
+  background-color: #e3e5d7;
   min-height: 80vh;
   width: 100%;
   padding: 4rem;
 
   .TituloExplorar{
-    padding: 1.2rem;
+    padding: 0.5rem;
     h1{
+      color: #586875;
       font-size: 58px;
     }
     h2{
       font-size: 40px;
+      color: #586875;
     }
   }
 
@@ -653,9 +617,10 @@
 
     a{
       color: white;
-      width: 25vh;
+      width: 80%;
       background-color: #1693a5;
       text-decoration: none;
+      text-align: center;
       font-size: 18px;
       text-transform: uppercase;
       border-radius: 10px;
@@ -665,7 +630,428 @@
     }
   }
 }
+// ================================= ATIVIDADE =========================================== //
 
+.ATIVIDADE{
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 90vh;
+  padding: 4.2rem;
+  background-color: #e3e5d7;
+
+  .BotaoVoltar{
+    background-color:#5589ad;
+    width: 10vh;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    text-align: center;
+    padding: 0.5rem;
+    font-weight: bold;
+    color:white;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    
+  }
+
+  h1{
+    font-size: 54px;
+    margin-bottom: 1.6rem;
+    color: #586875;
+    text-transform: uppercase;
+    
+  }
+
+  .FormAtividade{
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    padding: 1.4rem;
+    width: 100%; 
+    
+    min-height: 20vh;
+    border-radius: 10px;
+    
+    label{
+      display:flex;
+      flex-direction: column;
+      color: #1693a5;
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
+    input, select{
+      padding: 0.3rem;
+      min-width: 100%;
+      border-radius: 10px;
+    }
+
+    button{
+      background-color:#5589ad;
+      width: 20vh;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      padding: 0.5rem;
+      font-weight: bold;
+      color:white;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+
+  }
+  .AtividadeDias{
+
+    h2{
+      padding-bottom: 1rem;
+    }
+
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 1.4rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    .AtividadeRegistrada{
+      background-color: #f2f2f2;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      button{
+        background-color: #e74c3c;
+        color: white;
+        padding: 8px 12px;
+        border: none;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+      }
+    }
+  }
+  .AtividadeImportancia{
+    background-color: #f1efef;
+    padding: 1.2rem;
+    border-radius: 10px;
+    width: 100%;
+  }
+}
+// ================================= EXAMES =========================================== //
+.EXAMES{
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 90vh;
+  padding: 4.2rem;
+  background-color: #e3e5d7;
+
+  .BotaoVoltar{
+    background-color:#5589ad;
+    width: 10vh;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    text-align: center;
+    padding: 0.5rem;
+    font-weight: bold;
+    color:white;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    
+  }
+
+  h1{
+    font-size: 54px;
+    margin-bottom: 1.6rem;
+    color: #586875;
+    text-transform: uppercase;
+    
+  }
+
+  .FormExame{
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    padding: 1.4rem;
+    width: 100%; 
+    min-height: 20vh;
+    border-radius: 10px;
+
+    label{
+      display:flex;
+      flex-direction: column;
+      color: #1693a5;
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
+    input, select{
+      padding: 0.3rem;
+      min-width: 100%;
+      border-radius: 10px;
+    }
+
+    button{
+      background-color:#5589ad;
+      width: 20vh;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      padding: 0.5rem;
+      font-weight: bold;
+      color:white;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+  }
+  
+  .ExameRegistrado{
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 1.4rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    .RegistroExame{
+      background-color: #f2f2f2;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    button{
+      background-color: #e74c3c;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+  }
+}
+
+// ================================= NUTRIÇÃO =========================================== //
+.NUTRICAO{
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 90vh;
+  padding: 4.2rem;
+  background-color: #e3e5d7;
+
+  .BotaoVoltar{
+    background-color:#5589ad;
+    width: 10vh;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    text-align: center;
+    padding: 0.5rem;
+    font-weight: bold;
+    color:white;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    
+  }
+
+  h1{
+    font-size: 54px;
+    margin-bottom: 1.6rem;
+    color: #586875;
+    text-transform: uppercase;
+    
+  }
+   .FormNutricao{
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    padding: 1.4rem;
+    width: 100%; 
+    min-height: 20vh;
+    border-radius: 10px;
+
+    label{
+      display:flex;
+      flex-direction: column;
+      color: #1693a5;
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
+    input, select{
+      padding: 0.3rem;
+      min-width: 100%;
+      border-radius: 10px;
+    }
+
+    button{
+      background-color:#5589ad;
+      width: 20vh;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      padding: 0.5rem;
+      font-weight: bold;
+      color:white;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+
+   }
+
+   .AlimentosRegistrados{
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 1.4rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    .AlimentoRegistrado{
+      background-color: #f2f2f2;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    
+    button{
+      background-color: #e74c3c;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+    }
+
+
+   }
+}
+
+// ================================= SONO =========================================== //
+.SONO{
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 90vh;
+  padding: 4.2rem;
+  background-color: #e3e5d7;
+
+  .BotaoVoltar{
+    background-color:#5589ad;
+    width: 10vh;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    text-align: center;
+    padding: 0.5rem;
+    font-weight: bold;
+    color:white;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    
+  }
+
+  h1{
+    font-size: 54px;
+    margin-bottom: 1.6rem;
+    color: #586875;
+    text-transform: uppercase;
+    
+  }
+
+  .FormSono{
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    padding: 1.4rem;
+    width: 100%; 
+    min-height: 20vh;
+    border-radius: 10px;
+
+    label{
+      display:flex;
+      flex-direction: column;
+      color: #1693a5;
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
+    input, select{
+      padding: 0.3rem;
+      min-width: 100%;
+      border-radius: 10px;
+    }
+
+    button{
+      background-color:#5589ad;
+      width: 20vh;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      padding: 0.5rem;
+      font-weight: bold;
+      color:white;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+  }
+
+  .MetaSono{
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 1.4rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .RegistroSono{
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 1.4rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .SobreSono{
+    background-color: #f1efef;
+    padding: 1.2rem;
+    border-radius: 10px;
+    width: 100%;
+
+    h2{
+      font-size: 42px;
+      
+    }
+
+    p{
+      font-size: 18px;
+      text-align: justify;
+    }
+  }
+}
 
 // ================================= MEDIA =========================================== //
 @media screen and (max-width:1024px){
@@ -683,7 +1069,7 @@
     min-height: 210vh;
     .BannerHome{
       display:flex;
-      min-height: 100vh;
+      min-height: 120vh;
       p{
         text-align: justify;
       }
