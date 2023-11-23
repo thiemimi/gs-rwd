@@ -7,15 +7,9 @@ export default function Home() {
     <main className="HOME">
         <div className='BannerHome'>
           <h1>Descubra o Futuro da Saúde com Saúde 360°!</h1>
-          <p>Na Saúde 360°, estamos revolucionando a maneira como você cuida da sua saúde. Utilizando tecnologia de realidade aumentada (RA), oferecemos:
-          Espelho de Saúde Virtual,
-          Experiências Interativas,
-          Monitoramento Personalizado,
-          Diagnóstico Instantâneo e
-          Compartilhamento em Tempo Real
-          </p>
+          <p>Na Saúde 360°, estamos revolucionando a maneira como você cuida da sua saúde. Utilizando tecnologia de realidade aumentada (RA), oferecemos: Espelho de Saúde Virtual, Experiências Interativas, Monitoramento Personalizado, Diagnóstico Instantâneo e Compartilhamento em Tempo Real </p>
           <div className='BotoesHome'>
-            <Link href={'/produto'} className='BotaoHome'>Ver produtos</Link>
+            {/* <Link href={'/produto'} className='BotaoHome'>Ver produtos</Link> */}
             <Link href={'/sobrenos'} className='BotaoHome'>Saiba mais</Link>
           </div>
         </div>

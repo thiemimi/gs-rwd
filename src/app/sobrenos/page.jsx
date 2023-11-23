@@ -15,7 +15,7 @@ export default function Sobrenos(){
                 </div>
             </div>
             <div className="Componentes">
-                <h1>PRINCIPAIS COMPONENTES</h1>
+                
                 <div className="Componente">
                 <div className="TextoImagemSobreNos">   
                     <Image src={'/espelho.png'} alt='espelho' width={120} height={160} className="ImagemSobreNos"/>
@@ -24,11 +24,11 @@ export default function Sobrenos(){
                     <p> O Espelho de Saúde Virtual utiliza tecnologia avançada de captura de imagem e realidade aumentada para criar uma representação digital precisa do corpo do usuário. Ele destaca áreas específicas que exigem atenção, como sistemas cardiovascular, respiratório, nervoso, entre outros. </p>
                 </div>
                 <div className="Componente">
-                    <p> Módulos interativos incluem experiências como simulações de exercícios personalizados, jogos educativos para aprender sobre alimentação saudável e práticas de mindfulness, e cenários virtuais que destacam os benefícios de hábitos saudáveis. </p>
                     <div className="TextoImagemSobreNos">
                         <Image src={'/homemcoracao.png'} alt='homem com desenho de coração na cabeça' width={130} height={140} className="ImagemSobreNos"/>
                         <h2>2.Experiências Interativas de Prevenção:</h2>
                     </div>
+                    <p> Módulos interativos incluem experiências como simulações de exercícios personalizados, jogos educativos para aprender sobre alimentação saudável e práticas de mindfulness, e cenários virtuais que destacam os benefícios de hábitos saudáveis. </p>
                 </div>
                 <div className="Componente">
                 <div className="TextoImagemSobreNos">
@@ -38,12 +38,12 @@ export default function Sobrenos(){
                     <p> Sensores wearables conectados à plataforma Saúde 360° monitoram constantemente dados vitais, atividades físicas e padrões de sono. Essas informações são integradas à experiência de realidade aumentada para fornecer feedback instantâneo e sugestões personalizadas.</p>
                 </div>
                 <div className="Componente">
-                    <p> A funcionalidade de diagnóstico utiliza tecnologia de escaneamento por RA para analisar detalhes específicos do corpo. Isso inclui a detecção precoce de alterações em tecidos, órgãos ou sistemas que podem indicar riscos potenciais à saúde.</p>
                     <div className="TextoImagemSobreNos">
                         <Image src={'/ficha.png'} alt='ficha médica' width={130} height={100}
                         className="ImagemSobreNos"/>
                         <h2>4.Diagnóstico Instantâneo:</h2>
                     </div>
+                    <p> A funcionalidade de diagnóstico utiliza tecnologia de escaneamento por RA para analisar detalhes específicos do corpo. Isso inclui a detecção precoce de alterações em tecidos, órgãos ou sistemas que podem indicar riscos potenciais à saúde.</p>
                 </div>
                 <div className="Componente">
                     <div className="TextoImagemSobreNos">

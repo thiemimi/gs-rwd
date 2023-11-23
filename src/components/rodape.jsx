@@ -7,7 +7,9 @@ export default function Rodape(){
             <div className="Turma">
                 <h2>Turma: TDSPK</h2>
             </div>
-            <Image src={'/logo.png'} alt='logo' width={120} height={120}/>
+            <div className="ImagemRodape">
+                <Image src={'/logo.png'} alt='logo' width={120} height={120}/>
+            </div>
             <div className="Integrantes">
                 <p>Ana Clara Rocha de Olivera RM: 550110</p>
                 <p>Enzo Lafer Gallucci RM: 551111</p>

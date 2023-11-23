@@ -28,7 +28,7 @@ export default function Cabecalho(){
                     <div className="Menu">
                         <Link href={'/'} className={rotaAtual.pathname == "/" ? "active" : ""}>Home</Link>
                         <Link href={'/sobrenos'} className={rotaAtual.pathname == "/sobrenos" ? "active" : ""}> Sobre Nos</Link>
-                        <Link href={'/produto'} className={rotaAtual.pathname == "/produto" ? "active" : ""}> Produto</Link>
+                        {/* <Link href={'/produto'} className={rotaAtual.pathname == "/produto" ? "active" : ""}> Produto</Link> */}
                         <Link href={'/resumo'} className={rotaAtual.pathname == "/resumo" ? "active" : ""}>Resumo</Link>
                         <Link href={'/explorar'} className={rotaAtual.pathname == "/explorar" ? "active" : ""}>Explorar</Link>
                         <Link href={'/configuracoes'} className={rotaAtual.pathname == "/configuracoes" ? "active" : ""}> Configurações</Link>
@@ -48,7 +48,7 @@ export default function Cabecalho(){
                     <div className="Menu">
                         <Link href={'/'} className={rotaAtual.pathname == "/" ? "active" : ""}>Home</Link>
                         <Link href={'/sobrenos'} className={rotaAtual.pathname == "/sobrenos" ? "active" : ""}> Sobre Nos</Link>
-                        <Link href={'/produto'} className={rotaAtual.pathname == "/produto" ? "active" : ""}> Produto</Link>
+                        {/* <Link href={'/produto'} className={rotaAtual.pathname == "/produto" ? "active" : ""}> Produto</Link> */}
                     </div>
                     <div className="LogarCadastrar">
                         <Link href={'/login'} className={rotaAtual.pathname == "/login" ? "active" : ""}>Login</Link>

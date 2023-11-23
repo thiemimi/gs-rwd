@@ -94,6 +94,9 @@ export default function Resumo(){
             <div className="BlocosResumo">
 
                 <div className="BlocoResumo">
+                    <h1>Resumo das atividades cadastradas: </h1>
+                </div>
+                <div className="BlocoResumo">
                     <h1>Metas: </h1>
                     <div className="Nova">
                         <form action="#" method="get" onSubmit={handleSubmit}>
@@ -152,9 +155,6 @@ export default function Resumo(){
                 </div>
 
 
-                <div className="BlocoResumo">
-                    <h1>Resumo das atividades cadastradas: </h1>
-                </div>
 
 
             </div>
