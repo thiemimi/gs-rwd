@@ -1,9 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-
-
 
 
 const Atividade = () => {
@@ -27,7 +25,6 @@ const Atividade = () => {
   };
 
   useEffect(() => {
-    // Filtre as atividades registradas para mostrar apenas as últimas 30 dias
     const atividadesRecentes = atividadesRegistradas.filter((atividade) => {
       const dataAtividade = new Date(atividade.data);
       const hoje = new Date();
@@ -39,7 +36,6 @@ const Atividade = () => {
   }, []);
 
   const handleRegistrarAtividade = () => {
-    // Lógica para registrar a nova atividade
     const novaAtividade = {
       tipo: tipoAtividade,
       outra: outraAtividade,
@@ -49,79 +45,80 @@ const Atividade = () => {
 
     setAtividadesRegistradas([...atividadesRegistradas, novaAtividade]);
 
-    // Limpar os campos após o registro
     setTipoAtividade('');
     setOutraAtividade('');
     setDuracaoAtividade('');
   };
 
   const handleExcluirAtividade = (index) => {
-    // Lógica para excluir a atividade
     const novasAtividades = [...atividadesRegistradas];
     novasAtividades.splice(index, 1);
     setAtividadesRegistradas(novasAtividades);
   };
 
   return (
-    <div>
+    
+    <div className='ATIVIDADE'>
+      
+      <Link href="/explorar" className='BotaoVoltar'>Voltar</Link>
       <h1>Atividade Física</h1>
 
-      {/* Formulário para registrar nova atividade */}
-      <form>
-        <label>Nome:</label>
-        <select value={tipoAtividade} onChange={(e) => setTipoAtividade(e.target.value)}>
-          <option value="">Selecione</option>
-          {Object.keys(TIPOS_ATIVIDADE).map((key) => (
-            <option key={key} value={key}>
-              {TIPOS_ATIVIDADE[key]}
-            </option>
-          ))}
-        </select>
+      <div className='FormAtividade'>
+        <form>
+          <label>Nome:</label>
+          <select value={tipoAtividade} onChange={(e) => setTipoAtividade(e.target.value)}>
+            <option value="">Selecione</option>
+            {Object.keys(TIPOS_ATIVIDADE).map((key) => (
+              <option key={key} value={key}>
+                {TIPOS_ATIVIDADE[key]}
+              </option>
+            ))}
+          </select>
 
-        {tipoAtividade === '0' && (
-          <div>
-            <label>Digite o nome da atividade:</label>
-            <input type="text" value={outraAtividade} onChange={(e) => setOutraAtividade(e.target.value)} />
-          </div>
-        )}
+          {tipoAtividade === '0' && (
+            <div className='NomeAtividade'>
+              <label>Digite o nome da atividade:</label>
+              <input type="text" value={outraAtividade} onChange={(e) => setOutraAtividade(e.target.value)} />
+            </div>
+          )}
 
-        <label>Duração (em minutos):</label>
-        <input type="number" value={duracaoAtividade} onChange={(e) => setDuracaoAtividade(e.target.value)} />
+          <label>Duração (em minutos):</label>
+          <input type="number" value={duracaoAtividade} onChange={(e) => setDuracaoAtividade(e.target.value)} />
 
-        <button type="button" onClick={handleRegistrarAtividade}>
-          Registrar 
-        </button>
-      </form>
-
-      {/* Lista de atividades registradas */}
-      <div>
-        <h3>Últimos 30 Dias</h3>
-        <ul>
-          {atividadesRegistradas.map((atividade, index) => (
-            <li key={index}>
-              {TIPOS_ATIVIDADE[atividade.tipo]}
-              {atividade.outra && ` - ${atividade.outra}`}
-              {` - Duração: ${atividade.duracao} minutos`}
-              <button type="button" onClick={() => handleExcluirAtividade(index)}>
-                x
-              </button>
-            </li>
-          ))}
-        </ul>
+          <button type="button" onClick={handleRegistrarAtividade}>
+            Registrar
+          </button>
+        </form>
       </div>
 
-      {/* Texto sobre a importância das atividades físicas */}
-      <h2>Importancia</h2>
-      <p>
-        A prática regular de atividades físicas traz inúmeros benefícios para a saúde, incluindo a melhoria do condicionamento
-        cardiovascular, fortalecimento muscular, controle do peso corporal e aumento da sensação de bem-estar. Lembre-se de
-        escolher atividades que você desfrute para tornar o exercício uma parte sustentável de seu estilo de vida.
-      </p>
+      <div className='AtividadeDias'>
+        <h2>Últimos 30 dias</h2>
+        {atividadesRegistradas.map((atividade, index) => (
+          <div key={index} className='AtividadeRegistrada'>
+            <span>
+              {TIPOS_ATIVIDADE[atividade.tipo]}
+              {atividade.outra && ` ${atividade.outra}`}
+            </span>
+            <span>{`  Duração: ${atividade.duracao} minutos`}</span>
+            <button type="button" onClick={() => handleExcluirAtividade(index)}>
+              x
+            </button>
+          </div>
+        ))}
+      </div>
 
-      {/* Botão para voltar para Explorar */}
-      <Link href="/explorar">Voltar</Link>
+      <div className='AtividadeImportancia'>
+        <h2>Importancia</h2>
+        <p>
+          A prática regular de atividades físicas traz inúmeros benefícios para a saúde, incluindo a melhoria do condicionamento
+          cardiovascular, fortalecimento muscular, controle do peso corporal e aumento da sensação de bem-estar. Lembre-se de
+          escolher atividades que você desfrute para tornar o exercício uma parte sustentável de seu estilo de vida.
+        </p>
+      </div>
+
+      
     </div>
   );
 };
 
-
+export default Atividade;

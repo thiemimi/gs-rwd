@@ -33,35 +33,36 @@ const Nutricao = () => {
 
   // Renderização do componente
   return (
-    <div>
+    <div className='NUTRICAO'>
+      <Link href="/explorar" className='BotaoVoltar'>Voltar</Link>
       <h1>Nutrição</h1>
 
-      {/* Formulário para registrar alimentação */}
-      <form>
-        <label>Tipo de Refeição:</label>
-        <select value={tipoRefeicao} onChange={(e) => setTipoRefeicao(e.target.value)}>
-          <option value="">Selecione</option>
-          <option value="1">Café da manhã</option>
-          <option value="2">Lanche da manhã</option>
-          <option value="3">Almoço</option>
-          <option value="4">Lanche da tarde</option>
-          <option value="5">Jantar</option>
-          <option value="6">Lanche da noite</option>
-        </select>
+      <div className="FormNutricao">
+        <form>
+          <label>Tipo de Refeição:</label>
+          <select value={tipoRefeicao} onChange={(e) => setTipoRefeicao(e.target.value)}>
+            <option value="">Selecione</option>
+            <option value="1">Café da manhã</option>
+            <option value="2">Lanche da manhã</option>
+            <option value="3">Almoço</option>
+            <option value="4">Lanche da tarde</option>
+            <option value="5">Jantar</option>
+            <option value="6">Lanche da noite</option>
+          </select>
 
-        <label>Alimentos Consumidos:</label>
-        <input type="text" value={alimentosConsumidos} onChange={(e) => setAlimentosConsumidos(e.target.value)} />
+          <label>Alimentos Consumidos:</label>
+          <input type="text" value={alimentosConsumidos} onChange={(e) => setAlimentosConsumidos(e.target.value)} />
 
-        <button type="button" onClick={handleRegistrarAlimentacao}>
-          Registrar
-        </button>
-      </form>
+          <button type="button" onClick={handleRegistrarAlimentacao}>
+            Registrar
+          </button>
+        </form>
+      </div>
 
-      {/* Lista de alimentos registrados */}
-      <div>
+      <div className='AlimentosRegistrados'>
         <h2>Alimentos Registrados</h2>
         {alimentosRegistrados.map((alimentacao, index) => (
-          <div key={index}>
+          <div key={index} className='AlimentoRegistrado'>
             <span>
               Tipo de Refeição: {alimentacao.tipoRefeicao}, Alimentos Consumidos: {alimentacao.alimentosConsumidos}
             </span>
@@ -72,8 +73,8 @@ const Nutricao = () => {
         ))}
       </div>
 
-      {/* Botão para voltar para Explorar */}
-      <Link href="/explorar">Voltar</Link>
+   
+      
     </div>
   );
 };
