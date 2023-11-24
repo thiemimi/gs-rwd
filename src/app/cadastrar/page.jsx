@@ -39,7 +39,7 @@ export default function Cadastrar() {
             .then(data => {
                 console.log("Data", usuario);
 
-                // window.location = '/login';
+                window.location = '/login';
             })
             .catch(error => console.error(error))
     }
