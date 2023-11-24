@@ -5,23 +5,34 @@ import Link from 'next/link';
 
 
 const Atividade = () => {
+
+  
   const [tipoAtividade, setTipoAtividade] = useState('');
   const [outraAtividade, setOutraAtividade] = useState('');
   const [duracaoAtividade, setDuracaoAtividade] = useState('');
   const [atividadesRegistradas, setAtividadesRegistradas] = useState([]);
 
   const TIPOS_ATIVIDADE = {
-    1: 'Corrida',
-    2: 'Caminhada',
-    3: 'Trilha',
-    4: 'Pedalada',
-    5: 'Bicicleta Elétrica',
-    6: 'Canoa',
-    7: 'Caiaque',
-    8: 'Remo',
-    9: 'Surfe',
-    10: 'Natação',
-    0: 'Outros',
+    1: 'CORRIDA',
+    2: 'CAMINHADA',
+    3: 'TRILHA',
+    4: 'CICLISMO',
+    5: 'YOGA',
+    6: 'CANOA',
+    7: 'CAIAQUE',
+    8: 'REMO',
+    9: 'SURF',
+    10: 'NATAÇÃO',
+    11:'PILATES',
+    12:'MUSCULAÇÃO',
+    13:'CROSSFIT',
+    14:'DANÇA',
+    15:'AEROBICA',
+    16:'FUTEBOL',
+    17:'BASQUETE',
+    18:'ESCALADA',
+    19:'VOLEI',
+    0: 'OUTROS',
   };
 
   useEffect(() => {

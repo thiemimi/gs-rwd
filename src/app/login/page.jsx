@@ -4,92 +4,70 @@ import Image from "next/image";
 import { useState, useEffect } from "react"
 import Link from "next/link";
 
-export default function Login() {
-    
+export default function Login({params}) {
+
+    const idUser = params.id == 0 ? '' : params.id;
+
     const [msgstatus, setMsgstatus] = useState("");
     const [classStatus, setClassStatus] = useState("");
     const [usuario, setUsuario] = useState({
-        email:"",
-        senha:""
-    })
-    const handleChange = async (e)=>{
-        const{name, value} = e.target;
-
-        await setUsuario({...usuario,[name]:value})
+        email: '',
+        senha: '',
+        id: ''
+    });
+    
+    const handleChange = async (e) => {
+        const { name, value } = e.target;
+    
+        await setUsuario({ ...usuario, [name]: value });
     };
-
-    useEffect(()=>{
-
-        if(msgstatus == "Login realizado com sucesso!"){
-            setClassStatus("login-sucesso");
-        }else if(msgstatus == "Usuário e/ou senha incorretos!"){
-            setClassStatus("login-erro");
-        }else{
-            setClassStatus("login");
-        }
-
-    }, [msgstatus])
-
-    const handleSubmit = async (e)=>{
+    
+    const handleSubmit = async (e) => {
         e.preventDefault();
+    
+        try {
+            const response = await fetch(`http://localhost:8080/GSDDD/rest/conta/login?email=${usuario.email}&senha=${usuario.senha}`);
+    
+            if (response.ok) {
+                const data = await response.json();
+    
+                if (data.IdUsuario) {
+                    setUsuario((prevState) => ({
+                        ...prevState,
+                        id: data.IdUsuario
+                    }));
 
-        let user;
-
-        try{
-            const response = await fetch("http://localhost:5000/usuarios")
-
-            if(response.ok){
-                const users = await response.json();
-
-                for (let x = 0; x < users.length; x++) {
-                    const u = users[x];
-
-                    if(u.email == usuario.email && u.senha == usuario.senha){
-                        user = u;
-
-                        break;
-                    }
-                }
-
-                if(user){
-                    setMsgstatus("Login realizado com sucesso!")
-
+                    sessionStorage.setItem("idUser", data.IdUsuario);
+    
                     const token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2);
-                    
                     sessionStorage.setItem("token-user", token);
-                    sessionStorage.setItem("user-obj", JSON.stringify(user))
-
-                    setTimeout(()=>{
-                        window.location = "/";
-                    }, 5000)
-                }else{
-                    setMsgstatus("Usuário e/ou senha incorretos!")
-
-                    setTimeout(()=>{
-
+                    sessionStorage.setItem("user-obj", JSON.stringify(data));
+    
+                    setMsgstatus("Login realizado com sucesso!");
+                    setClassStatus("login-sucesso");
+    
+                    setTimeout(() => {
+                        window.location = `/?id=${data.IdUsuario}`;
+                    }, 5000);
+                } else {
+                    setMsgstatus("Usuário e/ou senha incorretos!");
+                    setClassStatus("login-erro");
+    
+                    setTimeout(() => {
                         setMsgstatus("");
-
                         setUsuario({
-                            "email":"",
-                            "senha":""
-                        })
-        
-                        window.location = "/login";
-
+                            email: "",
+                            senha: ""
+                        });
                     }, 5000);
                 }
-            }else{
-                setUsuario({
-                    "email":"",
-                    "senha":""
-                })
-
-                window.location = "/login";
+            } else {
+                console.error('Login falhou.');
+                throw new Error('Login falhou.');
             }
-        }catch(error){
-            console.log(error);
+        } catch (error) {
+            console.error(error);
         }
-
     }
     return(
         <div className="LOGIN">
