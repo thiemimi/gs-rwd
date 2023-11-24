@@ -5,7 +5,9 @@ import Link from "next/link"
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-export default function Cabecalho(){
+export default function Cabecalho({ idUser }){
+    
+    const userId = sessionStorage.getItem("idUser");
 
     const rotaAtual = useRouter();
     const userLogado = JSON.parse(sessionStorage.getItem("user-obj"));
@@ -29,9 +31,9 @@ export default function Cabecalho(){
                         <Link href={'/'} className={rotaAtual.pathname == "/" ? "active" : ""}>Home</Link>
                         <Link href={'/sobrenos'} className={rotaAtual.pathname == "/sobrenos" ? "active" : ""}> Sobre Nos</Link>
                         {/* <Link href={'/produto'} className={rotaAtual.pathname == "/produto" ? "active" : ""}> Produto</Link> */}
-                        <Link href={'/resumo'} className={rotaAtual.pathname == "/resumo" ? "active" : ""}>Resumo</Link>
-                        <Link href={'/explorar'} className={rotaAtual.pathname == "/explorar" ? "active" : ""}>Explorar</Link>
-                        <Link href={'/configuracoes'} className={rotaAtual.pathname == "/configuracoes" ? "active" : ""}> Configurações</Link>
+                        <Link href={`/resumo/?id=${userId}`} className={rotaAtual.pathname == "/resumo" ? "active" : ""}>Resumo</Link>
+                        <Link href={`/explorar/?id=${userId}`} className={rotaAtual.pathname == "/explorar" ? "active" : ""}>Explorar</Link>
+                        <Link href={`/configuracoes/?id=${userId}`} className={rotaAtual.pathname == "/configuracoes" ? "active" : ""}> Configurações</Link>
                     </div>
                     <div className="LogarCadastrar">
                         <Link href={'/login'} className={rotaAtual.pathname == "/login" ? "active" : ""} onClick={handleLogout}>Logout</Link>

@@ -2,7 +2,10 @@
 
 import { useState } from "react";
 
-export default function Resumo(){
+
+export default function Resumo({ userId }){
+
+   
 
     return(
         <main className="RESUMO">

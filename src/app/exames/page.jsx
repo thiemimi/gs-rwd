@@ -5,31 +5,31 @@ import Link from 'next/link';
 
 
 
-    const Exames = () => {
-        const [nomeExame, setNomeExame] = useState('');
-        const [dataExame, setDataExame] = useState('');
-        const [horarioExame, setHorarioExame] = useState('');
-        const [examesRegistrados, setExamesRegistrados] = useState([]);
+const Exames = () => {
+  const [nomeExame, setNomeExame] = useState('');
+  const [dataExame, setDataExame] = useState('');
+  const [horarioExame, setHorarioExame] = useState('');
+  const [examesRegistrados, setExamesRegistrados] = useState([]);
 
-    const handleRegistrarExame = () => {
-        const novoExame = {
-        nome: nomeExame,
-        data: dataExame,
-        horario: horarioExame,
-        };
+  const handleRegistrarExame = () => {
+    const novoExame = {
+      nome: nomeExame,
+      data: dataExame,
+      horario: horarioExame,
+    };
 
-        setExamesRegistrados([...examesRegistrados, novoExame]);
+    setExamesRegistrados([...examesRegistrados, novoExame]);
 
-        setNomeExame('');
-        setDataExame('');
-        setHorarioExame('');
+    setNomeExame('');
+    setDataExame('');
+    setHorarioExame('');
   };
 
-    const handleExcluirExame = (index) => {
-        const novosExames = [...examesRegistrados];
-        novosExames.splice(index, 1);
-        setExamesRegistrados(novosExames);
-    };
+  const handleExcluirExame = (index) => {
+    const novosExames = [...examesRegistrados];
+    novosExames.splice(index, 1);
+    setExamesRegistrados(novosExames);
+  };
 
   return (
 
@@ -48,7 +48,7 @@ import Link from 'next/link';
           <input type="time" value={horarioExame} onChange={(e) => setHorarioExame(e.target.value)} />
 
           <button type="button" onClick={handleRegistrarExame}>
-            Registrar 
+            Registrar
           </button>
         </form>
       </div>
@@ -67,7 +67,7 @@ import Link from 'next/link';
         </ul>
       </div>
 
-      
+
     </div>
   );
 };
