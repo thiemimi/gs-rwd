@@ -2,83 +2,124 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 
-const Atividade = () => {
+const Atividade = ({ idUser }) => {
 
+  const idU = sessionStorage.getItem("idUser");
+
+  const rotaAtual = useRouter();
+
+  const [atividades, setAtividades] = useState([]);
+
+  const [novaAtividade, setNovaAtividade] = useState({
+    tipo: '',
+    duracao: '',
+    dataAtiv: ''
+  });
+
+  useEffect(
+    () => {
+      fetch(`http://localhost:8080/GSDDD/rest/atividadefisica/?id=${idU}`)
+      .then(resp => resp.json())
+      .then(data => {
+        console.log('Dados da atividade:', data);
   
-  const [tipoAtividade, setTipoAtividade] = useState('');
-  const [outraAtividade, setOutraAtividade] = useState('');
-  const [duracaoAtividade, setDuracaoAtividade] = useState('');
-  const [atividadesRegistradas, setAtividadesRegistradas] = useState([]);
+        const atividadesRecentes = data.filter(atividade => {
+          const dataAtividade = new Date(atividade.dataAtiv);
+          const hoje = new Date();
+          const diffDias = Math.ceil((hoje - dataAtividade) / (1000 * 60 * 60 * 24));
+          return diffDias <= 30;
+        });
+  
+        atividadesRecentes.forEach(atividade => {
+          console.log('ID da atividade:', atividade.idAF);
+        });
+  
+        setAtividades(atividadesRecentes);
+      })
+      .catch(error => console.error(error));
+    }, []
+  )
+
+  const handleChange = e => {
+    setNovaAtividade({ ...novaAtividade, [e.target.name]: e.target.value });
+  }
+
+  const handleSubmit = e => {
+    console.log(novaAtividade);
+    e.preventDefault();
+    fetch(`http://localhost:8080/GSDDD/rest/atividadefisica/?id=${idU}`, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(novaAtividade)
+    })
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          console.error('Erro no cadastro', response.status);
+          throw new Error('Erro no cadastro');
+        }
+      })
+      .then(data => {
+        console.log('ID da atividade:', data);
+      })
+      .then(() => window.location.reload())
+      .catch(error => console.error(error))
+
+  }
+
+  const handleDelete = (idAtividade) => {
+    fetch(`http://localhost:8080/GSDDD/rest/atividadefisica/?id=${idAtividade}`, {
+      method: 'DELETE'
+    })
+      .then(() => window.location.reload())
+      .catch(error => console.error(error))
+  }
+
+
 
   const TIPOS_ATIVIDADE = {
-    1: 'CORRIDA',
-    2: 'CAMINHADA',
-    3: 'TRILHA',
-    4: 'CICLISMO',
-    5: 'YOGA',
-    6: 'CANOA',
-    7: 'CAIAQUE',
-    8: 'REMO',
-    9: 'SURF',
-    10: 'NATAÇÃO',
-    11:'PILATES',
-    12:'MUSCULAÇÃO',
-    13:'CROSSFIT',
-    14:'DANÇA',
-    15:'AEROBICA',
-    16:'FUTEBOL',
-    17:'BASQUETE',
-    18:'ESCALADA',
-    19:'VOLEI',
-    0: 'OUTROS',
+    'CORRIDA' : 'CORRIDA',
+    'CAMINHADA': 'CAMINHADA',
+    'TRILHA': 'TRILHA',
+    'CICLISMO': 'CICLISMO',
+    'YOGA': 'YOGA',
+    'CANOA': 'CANOA',
+    'CAIAQUE': 'CAIAQUE',
+    'REMO': 'REMO',
+    'SURF': 'SURF',
+    'NATAÇÃO': 'NATAÇÃO',
+    'PILATES': 'PILATES',
+    'MUSCULAÇÃO': 'MUSCULAÇÃO',
+    'CROSSFIT': 'CROSSFIT',
+    'DANÇA': 'DANÇA',
+    'AEROBICA': 'AEROBICA',
+    'FUTEBOL': 'FUTEBOL',
+    'BASQUETE': 'BASQUETE',
+    'ESCALADA': 'ESCALADA',
+    'VOLEI': 'VOLEI',
+    'OUTROS': 'OUTROS',
   };
 
-  useEffect(() => {
-    const atividadesRecentes = atividadesRegistradas.filter((atividade) => {
-      const dataAtividade = new Date(atividade.data);
-      const hoje = new Date();
-      const diffDias = Math.ceil((hoje - dataAtividade) / (1000 * 60 * 60 * 24));
-      return diffDias <= 30;
-    });
-
-    setAtividadesRegistradas(atividadesRecentes);
-  }, []);
-
-  const handleRegistrarAtividade = () => {
-    const novaAtividade = {
-      tipo: tipoAtividade,
-      outra: outraAtividade,
-      duracao: duracaoAtividade,
-      data: new Date().toISOString(),
-    };
-
-    setAtividadesRegistradas([...atividadesRegistradas, novaAtividade]);
-
-    setTipoAtividade('');
-    setOutraAtividade('');
-    setDuracaoAtividade('');
-  };
-
-  const handleExcluirAtividade = (index) => {
-    const novasAtividades = [...atividadesRegistradas];
-    novasAtividades.splice(index, 1);
-    setAtividadesRegistradas(novasAtividades);
-  };
 
   return (
-    
+
     <div className='ATIVIDADE'>
-      
+
       <Link href="/explorar" className='BotaoVoltar'>Voltar</Link>
       <h1>Atividade Física</h1>
 
       <div className='FormAtividade'>
-        <form>
+        <form onSubmit={handleSubmit}>
           <label>Nome:</label>
-          <select value={tipoAtividade} onChange={(e) => setTipoAtividade(e.target.value)}>
-            <option value="">Selecione</option>
+          <select name='tipo' value={novaAtividade.tipo} onChange={handleChange}>
+            <option value=''>Selecione</option>
             {Object.keys(TIPOS_ATIVIDADE).map((key) => (
               <option key={key} value={key}>
                 {TIPOS_ATIVIDADE[key]}
@@ -86,17 +127,13 @@ const Atividade = () => {
             ))}
           </select>
 
-          {tipoAtividade === '0' && (
-            <div className='NomeAtividade'>
-              <label>Digite o nome da atividade:</label>
-              <input type="text" value={outraAtividade} onChange={(e) => setOutraAtividade(e.target.value)} />
-            </div>
-          )}
+          <label>Data:</label>
+          <input type="date" name='dataAtiv' value={novaAtividade.dataAtiv} onChange={handleChange} />
 
           <label>Duração (em minutos):</label>
-          <input type="number" value={duracaoAtividade} onChange={(e) => setDuracaoAtividade(e.target.value)} />
+          <input type="number" name='duracao' value={novaAtividade.duracao} onChange={handleChange} />
 
-          <button type="button" onClick={handleRegistrarAtividade}>
+          <button type="submit" >
             Registrar
           </button>
         </form>
@@ -104,14 +141,13 @@ const Atividade = () => {
 
       <div className='AtividadeDias'>
         <h2>Últimos 30 dias</h2>
-        {atividadesRegistradas.map((atividade, index) => (
+        {atividades.map((atividade, index) => (
           <div key={index} className='AtividadeRegistrada'>
             <span>
               {TIPOS_ATIVIDADE[atividade.tipo]}
-              {atividade.outra && ` ${atividade.outra}`}
             </span>
             <span>{`  Duração: ${atividade.duracao} minutos`}</span>
-            <button type="button" onClick={() => handleExcluirAtividade(index)}>
+            <button type="button" onClick={() => handleDelete(atividade.idAtividade)}>
               x
             </button>
           </div>
@@ -127,7 +163,7 @@ const Atividade = () => {
         </p>
       </div>
 
-      
+
     </div>
   );
 };
