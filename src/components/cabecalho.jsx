@@ -33,7 +33,7 @@ export default function Cabecalho({ idUser }){
                         {/* <Link href={'/produto'} className={rotaAtual.pathname == "/produto" ? "active" : ""}> Produto</Link> */}
                         <Link href={`/resumo/?id=${userId}`} className={rotaAtual.pathname == "/resumo" ? "active" : ""}>Resumo</Link>
                         <Link href={`/explorar/?id=${userId}`} className={rotaAtual.pathname == "/explorar" ? "active" : ""}>Explorar</Link>
-                        <Link href={`/configuracoes/?id=${userId}`} className={rotaAtual.pathname == "/configuracoes" ? "active" : ""}> Configurações</Link>
+                        
                     </div>
                     <div className="LogarCadastrar">
                         <Link href={'/login'} className={rotaAtual.pathname == "/login" ? "active" : ""} onClick={handleLogout}>Logout</Link>
